@@ -1,0 +1,82 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.modal {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  color: #fff;
+  padding: 30px 28px;
+  border-radius: 18px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(168,85,247,.6);
+  animation: scaleIn .4s ease;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  color: #e5e7eb;
+}
+
+button {
+  background: #a855f7;
+  border: none;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #9333ea;
+  transform: translateY(-2px);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .modal {
+    padding: 22px 18px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: .95rem;
+  }
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+.backdrop {
+  cursor: not-allowed;
+}
+
+.modal {
+  cursor: default;
+}

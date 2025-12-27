@@ -1,0 +1,170 @@
+.section {
+  min-height: 100vh;
+}
+
+#about {
+  background: radial-gradient(circle at top, #12002b, #05010a);
+  padding: 120px 15px 60px;
+  scroll-margin-top: 120px;
+}
+
+/* Title */
+.about-title {
+  max-width: 950px;
+  margin: 0 auto 30px;
+  text-align: left;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* Glass Card */
+.about-glass {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 70px 50px 50px;
+  position: relative;
+  border-radius: 25px;
+  background: rgba(20, 5, 40, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+/* Floating photo */
+.photo-wrap {
+  position: absolute;
+  top: -70px;
+  right: 50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
+}
+
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Text */
+.about-text {
+  max-width: 100%;
+  padding-right: 180px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+/* Social */
+.about-social {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.about-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+/* 🌞 Light mode */
+:host-context(body.light-theme) #about {
+  background: #f8fafc;
+}
+
+:host-context(body.light-theme) .about-glass {
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+:host-context(body.light-theme) .about-text p {
+  color: #334155;
+}
+
+:host-context(body.light-theme) .about-title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile - About section only */
+/* 📱 Mobile - About section only */
+@media (max-width: 768px) {
+
+  #about {
+    padding: 140px 12px 50px;   /* slightly less top padding */
+    min-height: auto;
+  }
+
+  .about-glass {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 18px 30px;  /* more top space so photo won't clash */
+    border-radius: 18px;
+  }
+
+  .photo-wrap {
+    top: -30px;                /* 🔽 move photo down */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 110px;
+  }
+
+  .about-text {
+    padding-right: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .about-title {
+    width: 100%;
+    margin: -20px auto 30px;   /* 🔼 move title up */
+    text-align: center;
+    font-size: 1.9rem;
+  }
+
+  .about-title::after {
+    margin: 8px auto 0;
+  }
+
+  .about-social {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

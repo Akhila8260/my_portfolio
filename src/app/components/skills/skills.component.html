@@ -1,0 +1,19 @@
+<section
+  class="section"
+  id="skills"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title">Skills & Tools</h2>
+
+  <div class="skills-card glow-card">
+    <div class="skills-grid">
+      <div class="skill-item" *ngFor="let skill of skills">
+        <i [class]="skill.icon"></i>
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+
+</section>

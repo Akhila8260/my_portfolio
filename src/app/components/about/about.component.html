@@ -1,0 +1,37 @@
+<section
+  class="section"
+  id="about"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title about-title">About Me</h2>
+
+  <div class="about-glass glow-card">
+
+    <!-- Floating Photo -->
+    <div class="photo-wrap">
+      <img src="assets/profile.jpg" alt="My Photo" />
+    </div>
+
+    <!-- Content -->
+    <div class="about-text">
+      <p>
+        Aspiring Java Full Stack Engineer skilled in Core Java, Spring Boot, REST APIs, Angular, and databases, focused on building reliable, scalable, and secure applications that solve real-world problems.
+        <br><br>
+        Experienced through projects like Polling App, Attendance System, and Banking Onboarding, I bring strong backend, API, and UI skills with a growth mindset and passion for continuous improvement.
+      </p>
+
+      <div class="about-social">
+        <a href="https://wa.me/919348999424" target="_blank" class="whatsapp">
+          <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+
+        <a href="https://www.instagram.com/_.sm_.akhiiil_._/" target="_blank" class="instagram">
+          <i class="fab fa-instagram"></i><span>Instagram</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

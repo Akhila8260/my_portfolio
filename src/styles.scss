@@ -1,1 +1,127 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Variables - Dark Theme (default) */
+:root {
+  --bg: radial-gradient(circle at top, #1a0633, #000);
+  --bg-card: rgba(15, 23, 42, 0.9);
+  --purple: #3b82f6;
+  --purple-glow: rgba(59, 130, 246, 0.8);
+  --text: #f5f3ff;
+  --pill-bg: #05010a;
+  --pill-text: #ffffff;
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  --bg: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  --bg-card: #ffffff;
+  --purple: #4f46e5;
+  --purple-glow: rgba(79, 70, 229, 0.6);
+  --text: #0f172a;
+  --pill-bg: #eef2ff;
+  --pill-text: #0f172a;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  transition: background .3s ease, color .3s ease;
+}
+
+/* Sections */
+.section {
+  padding: 70px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* when visible */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Titles */
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;   /* 🔽 reduced gap */
+  color: var(--purple);
+  text-shadow: 0 0 15px var(--purple-glow);
+  font-family: 'Playfair Display', serif;
+}
+
+/* Cards */
+.glow-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(168,85,247,.4);
+  box-shadow: 0 0 25px rgba(168,85,247,.25);
+  transition: .3s;
+}
+
+.glow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(168,85,247,.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 15px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+}
+.scroll-top {
+  position: fixed;
+  right: 25px;
+  bottom: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 18px rgba(124,58,237,0.8);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.3s ease;
+}
+
+.scroll-top:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 25px rgba(168,85,247,1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

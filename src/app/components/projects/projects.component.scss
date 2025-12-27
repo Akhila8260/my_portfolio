@@ -1,0 +1,161 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Project card */
+.project-card {
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #120018, #1a0024);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow .3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Card content */
+.card-content h3 {
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+/* ✅ Different font for description */
+.project-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Overlay on hover */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 0, 20, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay p {
+  color: #ddd;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Button */
+.btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+}
+
+/* =========================
+   Light Theme Overrides
+   ========================= */
+:host-context(body.light-theme) {
+
+  .project-card {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 14px 30px rgba(0,0,0,.15);
+  }
+
+  .project-desc {
+    color: #0f172a;
+  }
+
+  .card-overlay {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .card-overlay p {
+    color: #0f172a;
+  }
+
+  .btn {
+    box-shadow: 0 4px 10px rgba(79,70,229,.3);
+  }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: auto;
+    min-height: 200px;
+  }
+}
+/* 🗂️ Modern left-aligned Projects title like About */
+#projects .title {
+  max-width: 950px;
+  margin: 0 0 30px 40px;   // shift left
+  padding-left: 10px;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+#projects .title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* 🌞 Light theme support */
+:host-context(body.light-theme) #projects .title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile: center it */
+@media (max-width: 900px) {
+  #projects .title {
+    margin: 0 auto 25px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #projects .title::after {
+    margin: 8px auto 0;
+  }
+}
+

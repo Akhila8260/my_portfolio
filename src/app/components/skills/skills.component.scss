@@ -1,0 +1,137 @@
+/* Single skills card */
+.skills-card {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 30px 28px;
+  border-radius: 22px;
+  background: var(--bg-card);
+  box-shadow: 0 0 30px rgba(168, 85, 247, .35);
+  transition: .3s ease;
+
+  &:hover {
+    box-shadow: 0 0 40px rgba(168, 85, 247, .55);
+  }
+}
+
+/* Grid inside card */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 24px;
+}
+
+/* Each skill */
+.skill-item {
+  background: rgba(168, 85, 247, 0.08);
+  border-radius: 18px;
+  padding: 18px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  box-shadow: 0 0 18px rgba(168, 85, 247, .25);
+  transition: .35s ease;
+  animation: floatSkill 4s ease-in-out infinite;
+}
+
+.skill-item:nth-child(even) {
+  animation-delay: 1s;
+}
+.skill-item:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+.skill-item i {
+  font-size: 2.2rem;
+}
+
+.skill-item span {
+  font-size: .85rem;
+  color: var(--text);
+}
+
+/* Hover effect */
+.skill-item:hover {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 0 28px rgba(168, 85, 247, .6);
+}
+
+/* Floating animation */
+@keyframes floatSkill {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* ☀️ Light theme */
+body.light-theme {
+  .skills-card {
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  }
+
+  .skill-item {
+    background: #f3f4f6;
+    box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  }
+
+  .skill-item span {
+    color: #334155;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+
+  .skills-card {
+    padding: 22px 18px;
+  }
+
+  .skill-item i {
+    font-size: 1.9rem;
+  }
+}
+/* 🛠️ Modern left-aligned Skills title like About */
+#skills .title {
+  max-width: 950px;
+  margin: 0 0 30px 40px;   // shift left
+  padding-left: 10px;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+#skills .title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* 🌞 Light theme support */
+:host-context(body.light-theme) #skills .title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile: center it */
+@media (max-width: 900px) {
+  #skills .title {
+    margin: 0 auto 25px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #skills .title::after {
+    margin: 8px auto 0;
+  }
+}

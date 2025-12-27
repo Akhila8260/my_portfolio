@@ -1,0 +1,42 @@
+<header [class.hide]="!isVisible">
+  <div class="navbar">
+
+    <a href="#hero" class="logo-link" (click)="closeMenu()">
+      <h2 class="logo">A M S</h2>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="#hero">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="actions">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" (click)="toggleTheme()">
+        {{ theme.isLightMode() ? '🌙' : '☀️' }}
+      </button>
+
+      <!-- Contact button desktop -->
+      <a href="#contact" class="signin-btn desktop-btn">Contact Me</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" (click)="toggleMenu()">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <a href="#hero" (click)="closeMenu()">Home</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#projects" (click)="closeMenu()">Projects</a>
+    <a href="#experience" (click)="closeMenu()">Experience</a>
+    <a href="#education" (click)="closeMenu()">Education</a>
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#contact" class="mobile-contact" (click)="closeMenu()">Contact Me</a>
+  </div>
+</header>

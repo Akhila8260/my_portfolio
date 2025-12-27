@@ -1,0 +1,162 @@
+.education-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.edu-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 22px 26px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.edu-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.9);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.edu-content {
+  width: 100%;
+}
+
+/* Duration */
+.edu-duration {
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+/* Degree */
+.edu-content h3 {
+  margin: 0 0 6px;
+  color: var(--purple);
+  font-size: 1.05rem;
+}
+
+/* Institute */
+.edu-content h4 {
+  margin: 0 0 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+/* Score */
+.edu-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+/* 🌙 Dark theme */
+.dark-theme {
+  .edu-duration { color: #ccc; }
+  .edu-content h4 { color: #eee; }
+  .edu-content p { color: #ddd; }
+}
+
+/* ☀️ Light theme */
+.light-theme {
+  .edu-duration { color: #64748b; }
+  .edu-content h4 { color: #334155; }
+  .edu-content p { color: #475569; }
+}
+
+/* Vertical line */
+.edu-card::before {
+  content: '';
+  position: absolute;
+  left: 33px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--purple), transparent);
+  opacity: 0.6;
+}
+
+.edu-card:last-child::before {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .edu-card {
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .edu-card::before {
+    left: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .edu-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .edu-card::before {
+    display: none;
+  }
+
+  .edu-dot {
+    margin-top: 0;
+  }
+}
+/* 🎓 Modern left-aligned Education title like About */
+#education .title {
+  max-width: 950px;
+  margin: 0 0 30px 40px;   // shift left
+  padding-left: 10px;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+#education .title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* 🌞 Light theme support */
+:host-context(body.light-theme) #education .title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile: center it */
+@media (max-width: 900px) {
+  #education .title {
+    margin: 0 auto 25px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #education .title::after {
+    margin: 8px auto 0;
+  }
+}
+

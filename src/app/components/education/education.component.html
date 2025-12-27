@@ -1,0 +1,25 @@
+<section
+  class="section"
+  id="education"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title">Education</h2>
+
+  <div class="education-container">
+    <div
+      class="edu-card glow-card"
+      *ngFor="let edu of educationList; let i = index">
+
+      <div class="edu-dot"></div>
+
+      <div class="edu-content">
+        <span class="edu-duration">{{ edu.duration }}</span>
+        <h3>{{ edu.degree }}</h3>
+        <h4>{{ edu.institute }}</h4>
+        <p *ngIf="edu.score">{{ edu.score }}</p>
+      </div>
+    </div>
+  </div>
+</section>

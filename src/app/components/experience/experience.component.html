@@ -1,0 +1,40 @@
+<section  class="section"
+  id="experience"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title">Experience</h2>
+
+  <div class="experience-container">
+    <div
+      class="glow-card exp-card"
+      *ngFor="let exp of experiences; let i = index"
+      (click)="toggle(i)"
+      [class.active]="activeIndex === i"
+    >
+      <!-- Header -->
+      <div class="exp-header">
+        <div class="left">
+          <h3>{{ exp.role }}</h3>
+          <span class="company">{{ exp.company }}</span>
+          <p class="location">{{ exp.location }}</p>
+        </div>
+
+        <div class="right">
+          <span class="duration">{{ exp.duration }}</span>
+          <span class="icon">
+            {{ activeIndex === i ? '−' : '+' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="exp-body" *ngIf="activeIndex === i">
+        <ul>
+          <li *ngFor="let d of exp.details">{{ d }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

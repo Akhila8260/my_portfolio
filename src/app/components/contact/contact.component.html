@@ -1,0 +1,108 @@
+<section
+  class="section"
+  id="contact"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title">Contact</h2>
+
+  <div class="contact-wrapper">
+
+    <!-- Left: Info -->
+    <div class="contact-info glow-card">
+      <h3>Get in Touch</h3>
+      <h2>Akhila Mohan Sahoo</h2>
+      <p>
+        📧
+        <a href="mailto:akhilamohansahoo675@gmail.com" class="email-link">
+          akhilamohansahoo675&#64;gmail.com
+        </a>
+      </p>
+      <p>📱 +91-9348999424</p>
+      <p>📍 Bhubaneswar, Odisha</p>
+    </div>
+
+    <!-- Center: Social Icons -->
+    <div class="contact-social">
+      <a href="https://www.linkedin.com/in/sm-akhil28" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Akhila8260" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/SmAkhil_" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/_.sm_.akhiiil_._/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Right: Form -->
+    <form
+      class="contact-form glow-card"
+      #f="ngForm"
+      (ngSubmit)="sendEmail(f, $event)">
+
+      <h3>Send Message</h3>
+
+      <!-- Name -->
+      <input
+        type="text"
+        name="user_name"
+        placeholder="Your Name"
+        ngModel
+        required
+        pattern="^[A-Za-z\s]+$"
+        #name="ngModel">
+      <small class="error" *ngIf="name.invalid && name.touched">
+        Name should contain only letters
+      </small>
+
+      <!-- Phone -->
+      <input
+        type="tel"
+        name="user_phone"
+        placeholder="Phone Number"
+        ngModel
+        required
+        pattern="^[0-9]{10}$"
+        #phone="ngModel">
+      <small class="error" *ngIf="phone.invalid && phone.touched">
+        Enter a valid 10-digit phone number
+      </small>
+
+      <!-- Email -->
+      <input
+        type="email"
+        name="user_email"
+        placeholder="Your Email"
+        ngModel
+        required
+        email
+        #email="ngModel">
+      <small class="error" *ngIf="email.invalid && email.touched">
+        Enter a valid email address
+      </small>
+
+      <!-- Message -->
+      <textarea
+        rows="4"
+        name="message"
+        placeholder="Your Message"
+        ngModel
+        required
+        #msg="ngModel"></textarea>
+      <small class="error" *ngIf="msg.invalid && msg.touched">
+        Message is required
+      </small>
+
+      <button
+        type="submit"
+        class="btn submit-btn"
+        [disabled]="f.invalid">
+        <span>Send Message</span>
+        <i class="fa fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- ✅ Floating Success Alert -->
+  <div class="success-alert" *ngIf="showSuccess">
+    <i class="fa fa-check-circle"></i>
+    Message sent successfully!
+  </div>
+</section>

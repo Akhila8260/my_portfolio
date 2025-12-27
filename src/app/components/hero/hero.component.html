@@ -1,0 +1,63 @@
+<div class="home">
+<section
+  class="hero"
+  id="hero"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = 'visible'">
+
+  <div class="hero-container">
+
+    <!-- Left -->
+    <div class="hero-text">
+      <h4 class="hello">Hello, I'm</h4>
+      <h1>Akhila Mohan Sahoo</h1>
+
+      <h2 class="animated-title">
+        {{ currentTitle }}
+      </h2>
+
+      <p>
+        Spring Boot | Angular | REST APIs | MySQL
+      </p>
+
+      <!-- Social Icons -->
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/sm-akhil28" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Akhila8260" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://x.com/SmAkhil_" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+
+      <!-- Buttons -->
+      <div class="actions">
+        <a href="#about" class="btn filled about-btn">
+          <span>About Me!</span>
+          <i class="fa fa-user"></i>
+        </a>
+
+        <a
+          href="https://drive.google.com/file/d/1hobBRmTijAa7hNCU_i1FyvOtlne7jDZK/view?usp=drivesdk"
+          target="_blank"
+          class="btn outline resume-btn">
+          <span>Resume ↗</span>
+          <i class="fa fa-download"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right : Flip Blob Image -->
+    <div class="hero-image">
+      <div class="blob float flip">
+        <img src="assets/me.png" alt="Akhila">
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>

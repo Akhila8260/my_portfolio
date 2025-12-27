@@ -1,0 +1,27 @@
+<section
+  class="section"
+  id="projects"
+  [@slideIn]="state"
+  scrollAnimate
+  (visible)="state = $event ? 'visible' : 'hidden'">
+
+  <h2 class="title">Projects</h2>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let p of projects">
+      <div class="card-content">
+        <h3>{{ p.title }}</h3>
+
+        <!-- ✅ Different font applied here -->
+        <p class="project-desc">{{ p.desc }}</p>
+      </div>
+
+      <div class="card-overlay">
+        <p><strong>Tech:</strong> {{ p.tech }}</p>
+        <a [href]="p.github" target="_blank" class="btn">
+          View on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

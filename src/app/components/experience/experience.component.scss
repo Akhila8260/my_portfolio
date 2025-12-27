@@ -1,0 +1,162 @@
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.exp-card {
+  padding: 22px 26px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-left: 4px solid transparent;
+
+  &.active {
+    border-left: 4px solid var(--purple);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Header */
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.exp-header .left h3 {
+  margin: 0;
+  color: var(--purple);
+  font-size: 1.1rem;
+}
+
+.company,
+.location,
+.duration,
+.exp-body li {
+  transition: color 0.3s;
+}
+
+.exp-header .right {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: var(--purple);
+  width: 26px;
+  text-align: center;
+}
+
+/* Body */
+.exp-body {
+  margin-top: 15px;
+  padding-left: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.exp-body ul {
+  padding-left: 18px;
+}
+
+/* 🌙 Dark theme */
+.dark-theme {
+  .company { color: #ddd; }
+  .location { color: #aaa; }
+  .duration { color: #ccc; }
+  .exp-body li { color: #ddd; }
+}
+
+/* ☀️ Light theme */
+.light-theme {
+  .company { color: #334155; }
+  .location { color: #64748b; }
+  .duration { color: #475569; }
+  .exp-body li { color: #475569; }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-header .right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-card {
+    padding: 18px;
+  }
+
+  .exp-header .left h3 {
+    font-size: 1rem;
+  }
+}
+/* 🧑‍💼 Modern left-aligned Experience title like About */
+#experience .title {
+  max-width: 950px;
+  margin: 0 0 30px 40px;   // shift left
+  padding-left: 10px;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+#experience .title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* 🌞 Light theme support */
+:host-context(body.light-theme) #experience .title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile: center it */
+@media (max-width: 900px) {
+  #experience .title {
+    margin: 0 auto 25px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #experience .title::after {
+    margin: 8px auto 0;
+  }
+}
+

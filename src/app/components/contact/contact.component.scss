@@ -1,0 +1,229 @@
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Left info */
+.contact-info h3 {
+  color: var(--purple);
+  margin-bottom: 15px;
+}
+
+/* Social icons */
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.contact-social a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple);
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px rgba(168,85,247,.5);
+  transition: .3s;
+}
+
+.contact-social a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(168,85,247,.8);
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form h3 {
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid rgba(168,85,247,.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text);
+  outline: none;
+  transition: .3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbb;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 10px rgba(168,85,247,.6);
+}
+
+/* Modern submit button */
+.submit-btn {
+  margin-top: 10px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: #fff;
+  border: none;
+  font-size: .95rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  transition: .3s ease;
+}
+
+.submit-btn i {
+  transition: .3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 1);
+}
+
+.submit-btn:hover i {
+  transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .contact-social {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    align-self: center;
+  }
+}
+/* 📞 Modern left-aligned Contact title like About */
+#contact .title {
+  max-width: 950px;
+  margin: 0 0 30px 40px;   // shift left
+  padding-left: 10px;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+#contact .title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  border-radius: 2px;
+}
+
+/* 🌞 Light theme support */
+:host-context(body.light-theme) #contact .title {
+  color: #1e293b;
+}
+
+/* 📱 Mobile Fixes for Contact Section */
+@media (max-width: 600px) {
+
+  #contact {
+    padding: 120px 12px 50px;
+  }
+
+  /* Title center & spacing */
+  #contact .title {
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 1.9rem;
+  }
+
+  #contact .title::after {
+    margin: 8px auto 0;
+  }
+
+  /* Stack everything neatly */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Make cards full width */
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+  }
+
+  /* Social icons in a row */
+  .contact-social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .contact-social a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  /* Inputs full width */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* Center submit button */
+  .submit-btn {
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Success alert fit on mobile */
+  .success-alert {
+    right: 12px;
+    left: 12px;
+    top: 20px;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes slideInOut {
+  0% { opacity: 0; transform: translateX(50px); }
+  15% { opacity: 1; transform: translateX(0); }
+  85% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(50px); }
+}
+
+
+
