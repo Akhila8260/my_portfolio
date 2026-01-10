@@ -224,6 +224,29 @@
   85% { opacity: 1; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(50px); }
 }
+/* =========================================================
+   🔵 Highlight LEFT contact-info card ONCE (Desktop call click)
+   ========================================================= */
+.highlight-once {
+  animation: contactGlowOnce 1.5s ease-in-out;
+}
+
+@keyframes contactGlowOnce {
+  0% {
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.9);
+    transform: scale(1.02);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+}
 
 
 
